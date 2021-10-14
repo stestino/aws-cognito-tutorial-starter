@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FormErrors from "../FormErrors";
 import Validate from "../utility/FormValidation";
-import { Auth } from "aws-amplify"
+import { Auth } from "aws-amplify";
 
 class LogIn extends Component {
   state = {
@@ -41,9 +41,9 @@ class LogIn extends Component {
       this.props.auth.setAuthStatus(true);
       this.props.auth.setUser(user);
       this.props.history.push("/");
-    }catch(error){
+    }catch(error) {
       let err = null;
-      !error.message ? err = {"message" : error} : err = error;
+      !error.message ? err = { "message": error } : err = error;
       this.setState({
         errors: {
           ...this.state.errors,
