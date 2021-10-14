@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FormErrors from "../FormErrors";
 import Validate from "../utility/FormValidation";
-import { Auth } from "aws-amplify"
+import { Auth } from "aws-amplify";
 
 class Register extends Component {
   state = {
@@ -48,11 +48,11 @@ class Register extends Component {
           email: email
         }
       });
-      console.log(signUpResponse);
       this.props.history.push("/welcome");
-    }catch(error){
+      console.log(signUpResponse);
+    } catch (error) {
       let err = null;
-      !error.message ? err = {"message" : error} : err = error;
+      !error.message ? err = { "message": error } : err = error;
       this.setState({
         errors: {
           ...this.state.errors,
@@ -60,7 +60,7 @@ class Register extends Component {
         }
       });
     }
-  };
+  }
 
   onInputChange = event => {
     this.setState({
